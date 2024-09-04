@@ -14,9 +14,7 @@ http://example.com/projects/src/index.html
 http://example.com/projects/src/deploymentProjects.html
 http://example.com/posts/57655.html
 http://example.com/posts/22141.html
-http://example.com/posts/59076.html
 http://example.com/projects/removeBg/index.html
-http://example.com/posts/64775.html
 http://example.com/posts/21510.html
 http://example.com/poem/imageStitcher/index.html
 http://example.com/poem/shufaDict_more.html

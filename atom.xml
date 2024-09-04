@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-08-29T03:06:26.653Z</updated>
+  <updated>2024-09-04T08:18:26.409Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,48 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>古典名著</title>
-    <link href="http://example.com/posts/64775.html"/>
-    <id>http://example.com/posts/64775.html</id>
-    <published>2024-08-29T03:05:10.000Z</published>
-    <updated>2024-08-29T03:06:26.653Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="../books/%E5%8F%A4%E5%85%B8%E5%90%8D%E8%91%97/index.html">古典名著</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;../books/%E5%8F%A4%E5%85%B8%E5%90%8D%E8%91%97/index.html&quot;&gt;古典名著&lt;/a&gt;&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>二十四史</title>
-    <link href="http://example.com/posts/59076.html"/>
-    <id>http://example.com/posts/59076.html</id>
-    <published>2024-08-29T02:46:13.000Z</published>
-    <updated>2024-08-29T08:39:58.815Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="../books/%E4%BA%8C%E5%8D%81%E5%9B%9B%E5%8F%B2/index.html">二十四史</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;../books/%E4%BA%8C%E5%8D%81%E5%9B%9B%E5%8F%B2/index.html&quot;&gt;二十四史&lt;/a&gt;&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>更新记录</title>
@@ -473,6 +431,54 @@
       
       
     <summary type="html">&lt;h3 id=&quot;1、Space-Huggers-太空拥抱者&quot;&gt;&lt;a href=&quot;#1、Space-Huggers-太空拥抱者&quot; class=&quot;headerlink&quot; title=&quot;1、Space Huggers 太空拥抱者&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://js13kg</summary>
+      
+    
+    
+    
+    <category term="js13kGames" scheme="http://example.com/categories/js13kGames/"/>
+    
+    
+    <category term="js13kGames" scheme="http://example.com/tags/js13kGames/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS13K 2022 获奖者 🏆</title>
+    <link href="http://example.com/posts/54091.html"/>
+    <id>http://example.com/posts/54091.html</id>
+    <published>2023-10-17T08:11:17.000Z</published>
+    <updated>2023-10-17T09:54:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、Dante-但丁"><a href="#1、Dante-但丁" class="headerlink" title="1、Dante 但丁"></a><a href="https://js13kgames.com/games/dante/index.html">1、Dante 但丁</a></h3><p><a href="https://github.com/SalvatorePreviti/js13k-2022">github</a><br><img src="https://github.blog/wp-content/uploads/2022/10/dante.png?resize=1024,512?w=1600"></p><h3 id="2、Dying-Dreams-垂死的梦想"><a href="#2、Dying-Dreams-垂死的梦想" class="headerlink" title="2、Dying Dreams 垂死的梦想"></a><a href="https://js13kgames.com/games/dying-dreams/index.html">2、Dying Dreams 垂死的梦想</a></h3><p><a href="https://github.com/jani-nykanen/dying-dreams">github</a><br><img src="https://github.blog/wp-content/uploads/2022/10/dying-dreams.png?resize=1024,512?w=1600"></p><h3 id="3、Norman-the-Necromancer-死灵法师诺"><a href="#3、Norman-the-Necromancer-死灵法师诺" class="headerlink" title="3、Norman the Necromancer 死灵法师诺"></a><a href="https://js13kgames.com/games/norman-the-necromancer/index.html">3、Norman the Necromancer 死灵法师诺</a></h3><p><a href="https://github.com/danprince/norman-the-necromancer">github</a><br><img src="https://github.blog/wp-content/uploads/2022/10/normal-the-necromancer.png?resize=1024,512?w=1600"></p><h3 id="4、Soul-Jumper-灵魂跳跃者"><a href="#4、Soul-Jumper-灵魂跳跃者" class="headerlink" title="4、Soul Jumper 灵魂跳跃者"></a><a href="https://js13kgames.com/games/soul-jumper/index.html">4、Soul Jumper 灵魂跳跃者</a></h3><p><a href="https://github.com/tyler6699/js13k2022">github</a><br><img src="https://github.blog/wp-content/uploads/2022/10/soul-jumper.png?resize=1024,512?w=1600"></p><h3 id="5、The-Neatness-整洁"><a href="#5、The-Neatness-整洁" class="headerlink" title="5、The Neatness 整洁"></a><a href="https://js13kgames.com/games/the-neatness/index.html">5、The Neatness 整洁</a></h3><p><a href="https://github.com/mvasilkov/neatness2022">github</a><br><img src="https://github.blog/wp-content/uploads/2022/10/the-neatness.png?resize=1024,512?w=1600"></p><h3 id="6、Charon-Jr-小卡戎"><a href="#6、Charon-Jr-小卡戎" class="headerlink" title="6、Charon Jr. 小卡戎"></a><a href="https://js13kgames.com/games/charon-jr/index.html">6、Charon Jr. 小卡戎</a></h3><p><a href="https://github.com/roblouie/charon-jr">github</a><br><img src="https://github.blog/wp-content/uploads/2022/10/charon-jnr.png?resize=1024,512?w=1600"></p><h3 id="7、13"><a href="#7、13" class="headerlink" title="7、13"></a><a href="https://grtc.herokuapp.com/">7、13</a></h3><p><a href="https://github.com/eliasku/13">github</a><br><img src="https://github.blog/wp-content/uploads/2022/10/13.png?resize=1024,512?w=1600"></p><h3 id="8、Soul-Surf-灵魂冲浪"><a href="#8、Soul-Surf-灵魂冲浪" class="headerlink" title="8、Soul Surf 灵魂冲浪"></a><a href="https://js13kgames.com/games/soul-surf/index.html">8、Soul Surf 灵魂冲浪</a></h3><p><a href="https://github.com/verybomb/soulsurf-js13k">github</a><br><img src="https://github.blog/wp-content/uploads/2022/10/soul-surf.png?resize=1024,512?w=1600"></p><h3 id="9、Infernal-Throne-地狱王座"><a href="#9、Infernal-Throne-地狱王座" class="headerlink" title="9、Infernal Throne 地狱王座"></a><a href="https://js13kgames.com/games/infernal-throne/index.html">9、Infernal Throne 地狱王座</a></h3><p><a href="https://github.com/arikwex/infernal-sigil">github</a><br><img src="https://github.blog/wp-content/uploads/2022/10/infernal-throne.png?resize=1024,512?w=1600"></p><h3 id="10、DEAD-AGAIN-又死了"><a href="#10、DEAD-AGAIN-又死了" class="headerlink" title="10、DEAD AGAIN 又死了"></a><a href="https://js13kgames.com/games/dead-again/index.html">10、DEAD AGAIN 又死了</a></h3><p><a href="https://github.com/sanojian/js13k_2022">github</a><br><img src="https://github.blog/wp-content/uploads/2022/10/dead-again.png?resize=1024,512?w=1600"></p><h3 id="11、Tindeath-锡死亡"><a href="#11、Tindeath-锡死亡" class="headerlink" title="11、Tindeath 锡死亡"></a><a href="https://js13kgames.com/games/tindeath/index.html">11、Tindeath 锡死亡</a></h3><p><a href="https://github.com/jonathan-vallet/js13k-2022">github</a><br><img src="https://github.blog/wp-content/uploads/2022/10/tin-death.png?resize=1024,512?w=1600"></p><h3 id="12、The-Raising-Fighting-Spirits-提升斗志"><a href="#12、The-Raising-Fighting-Spirits-提升斗志" class="headerlink" title="12、The Raising Fighting Spirits 提升斗志"></a><a href="https://js13kgames.com/games/the-raising-fighting-spirits/index.html">12、The Raising Fighting Spirits 提升斗志</a></h3><p><a href="https://github.com/IgorFIE/theraisingfightingspirits">github</a><br><img src="https://github.blog/wp-content/uploads/2022/10/the-raising-fighting-spirits.png?resize=1024,512?w=1600"></p><h3 id="13、Enchanted-Dungeon-魔法地牢"><a href="#13、Enchanted-Dungeon-魔法地牢" class="headerlink" title="13、Enchanted Dungeon 魔法地牢"></a><a href="https://js13kgames.com/games/enchanted-dungeon/index.html">13、Enchanted Dungeon 魔法地牢</a></h3><p><a href="https://github.com/malec-palec/death-game">github</a><br><img src="https://github.blog/wp-content/uploads/2022/10/enchanted-dungeon.png?resize=1024,512?w=1600"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、Dante-但丁&quot;&gt;&lt;a href=&quot;#1、Dante-但丁&quot; class=&quot;headerlink&quot; title=&quot;1、Dante 但丁&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://js13kgames.com/games/dante/index.html&quot;&gt;</summary>
+      
+    
+    
+    
+    <category term="js13kGames" scheme="http://example.com/categories/js13kGames/"/>
+    
+    
+    <category term="js13kGames" scheme="http://example.com/tags/js13kGames/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS13K 2023 获奖者 🏆</title>
+    <link href="http://example.com/posts/17290.html"/>
+    <id>http://example.com/posts/17290.html</id>
+    <published>2023-10-17T07:02:37.000Z</published>
+    <updated>2023-10-17T09:54:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="js13kGames-是一年一度的在线游戏开发竞赛，挑战参赛者仅使用-13-KB-的-JavaScript-创建主题-HTML5-游戏，比赛鼓励在小文件大小的限制下进行创造力、优化和创新，从而产生各种独特且引人入胜的游戏，下面是获奖项目："><a href="#js13kGames-是一年一度的在线游戏开发竞赛，挑战参赛者仅使用-13-KB-的-JavaScript-创建主题-HTML5-游戏，比赛鼓励在小文件大小的限制下进行创造力、优化和创新，从而产生各种独特且引人入胜的游戏，下面是获奖项目：" class="headerlink" title="js13kGames 是一年一度的在线游戏开发竞赛，挑战参赛者仅使用 13 KB 的 JavaScript 创建主题 HTML5 游戏，比赛鼓励在小文件大小的限制下进行创造力、优化和创新，从而产生各种独特且引人入胜的游戏，下面是获奖项目："></a>js13kGames 是一年一度的在线游戏开发竞赛，挑战参赛者仅使用 13 KB 的 JavaScript 创建主题 HTML5 游戏，比赛鼓励在小文件大小的限制下进行创造力、优化和创新，从而产生各种独特且引人入胜的游戏，下面是获奖项目：</h3><h3 id="1、Path-to-Glory-荣耀之路"><a href="#1、Path-to-Glory-荣耀之路" class="headerlink" title="1、Path to Glory 荣耀之路"></a><a href="https://js13kgames.com/games/path-to-glory/index.html">1、Path to Glory 荣耀之路</a></h3><p><a href="https://github.com/remvst/knight">github</a><br><img src="https://github.blog/wp-content/uploads/2023/10/Path-to-Glory.png?resize=1000,750?w=1000"></p><h3 id="2、Merlin-vs-Alfonso-梅林-vs-阿方索"><a href="#2、Merlin-vs-Alfonso-梅林-vs-阿方索" class="headerlink" title="2、Merlin vs Alfonso 梅林 vs 阿方索"></a><a href="https://js13kgames.com/games/merlin-vs-alfonso/index.html">2、Merlin vs Alfonso 梅林 vs 阿方索</a></h3><p><a href="https://github.com/merlinvsalfonso/merlingame">github</a><br><img src="https://github.blog/wp-content/uploads/2023/10/Merlin-vs-Alfonso.png?resize=1000,750?w=1000"></p><h3 id="3、Casual-Crusade-休闲十字军东征"><a href="#3、Casual-Crusade-休闲十字军东征" class="headerlink" title="3、Casual Crusade 休闲十字军东征"></a><a href="https://js13kgames.com/games/casual-crusade/index.html">3、Casual Crusade 休闲十字军东征</a></h3><p><a href="https://github.blog/wp-content/uploads/2023/10/Casual-Crusade.png?resize=1000,750?w=1000">github</a><br><img src="https://github.blog/wp-content/uploads/2023/10/Casual-Crusade.png?resize=1000,750?w=1000"></p><h3 id="4、Tiny-Yurts-小蒙古包"><a href="#4、Tiny-Yurts-小蒙古包" class="headerlink" title="4、Tiny Yurts 小蒙古包"></a><a href="https://js13kgames.com/games/tiny-yurts/index.html">4、Tiny Yurts 小蒙古包</a></h3><p><a href="https://github.com/burntcustard/tiny-yurts">github</a><br><img src="https://github.blog/wp-content/uploads/2023/10/Tiny-Yurts.png?resize=1000,750?w=1000"></p><h3 id="5、UPYRI-乌比里"><a href="#5、UPYRI-乌比里" class="headerlink" title="5、UPYRI 乌比里"></a><a href="https://js13kgames.com/games/upyri/index.html">5、UPYRI 乌比里</a></h3><p><a href="https://github.com/roblouie/upyri">github</a><br><img src="https://github.blog/wp-content/uploads/2023/10/Upyri.png?resize=1000,750?w=1000"></p><h3 id="6、CASTLE-🏰-ESCAPE-2023-城堡🏰逃生"><a href="#6、CASTLE-🏰-ESCAPE-2023-城堡🏰逃生" class="headerlink" title="6、CASTLE 🏰 ESCAPE (2023)城堡🏰逃生"></a><a href="https://js13kgames.com/games/castle-escape-2023/index.html">6、CASTLE 🏰 ESCAPE (2023)城堡🏰逃生</a></h3><p><a href="https://github.com/xem/js13k23">github</a><br><img src="https://github.blog/wp-content/uploads/2023/10/Castle-%F0%9F%8F%B0-Escape-2023.png?w=1000"></p><h3 id="7、Super-Castle-Game-超级城堡游戏"><a href="#7、Super-Castle-Game-超级城堡游戏" class="headerlink" title="7、Super Castle Game 超级城堡游戏"></a><a href="https://js13kgames.com/games/super-castle-game/index.html">7、Super Castle Game 超级城堡游戏</a></h3><p><a href="https://github.com/mvasilkov/super2023">github</a><br><img src="https://github.blog/wp-content/uploads/2023/10/Super-Castle-Game.png?resize=1000,750?w=1000"></p><h3 id="8、FEAST-NIGHT-盛宴之夜"><a href="#8、FEAST-NIGHT-盛宴之夜" class="headerlink" title="8、FEAST NIGHT 盛宴之夜"></a><a href="https://js13kgames.com/games/feast-night/index.html">8、FEAST NIGHT 盛宴之夜</a></h3><p><a href="https://github.com/wololoa/js13k2023">github</a><br><img src="https://github.blog/wp-content/uploads/2023/10/FEAST-NIGHT-.png?resize=1000,750?w=1000"></p><h3 id="9、Knight-Dreams-骑士梦"><a href="#9、Knight-Dreams-骑士梦" class="headerlink" title="9、Knight Dreams 骑士梦"></a><a href="https://js13kgames.com/games/knight-dreams/index.html">9、Knight Dreams 骑士梦</a></h3><p><a href="https://github.com/jani-nykanen/knight-dreams">github</a><br><img src="https://github.blog/wp-content/uploads/2023/10/Knight-Dreams.png?resize=1000,750?w=1000"></p><h3 id="10、Robin-of-Thirteensley-十三斯利的罗宾"><a href="#10、Robin-of-Thirteensley-十三斯利的罗宾" class="headerlink" title="10、Robin of Thirteensley 十三斯利的罗宾"></a><a href="https://js13kgames.com/games/robin-of-thirteensley/index.html">10、Robin of Thirteensley 十三斯利的罗宾</a></h3><p><a href="https://github.com/csubagio/js13k-robin/tree/master">github</a><br><img src="https://github.blog/wp-content/uploads/2023/10/Robin-of-Thirteensley.png?resize=1000,750?w=1000"></p><h3 id="11、Fort-Knight-奈特堡"><a href="#11、Fort-Knight-奈特堡" class="headerlink" title="11、Fort Knight 奈特堡"></a><a href="https://js13kgames.com/games/fort-knight/index.html">11、Fort Knight 奈特堡</a></h3><p><a href="https://github.com/tyler6699/js13k2023">github</a><br><img src="https://github.blog/wp-content/uploads/2023/10/Fort-Knight.png?resize=1000,750?w=1000"></p><h3 id="12、The-Terror-of-Mongolia-蒙古的恐怖"><a href="#12、The-Terror-of-Mongolia-蒙古的恐怖" class="headerlink" title="12、The Terror of Mongolia 蒙古的恐怖"></a><a href="https://js13kgames.com/games/the-terror-of-mongolia/index.html">12、The Terror of Mongolia 蒙古的恐怖</a></h3><p><a href="https://github.com/jacklehamster/khan-js13k/">github</a><br><img src="https://github.blog/wp-content/uploads/2023/10/The-Terror-of-Mongolia.png?resize=1000,750?w=1000"></p><h3 id="13、WitchCup1276-女巫杯1276"><a href="#13、WitchCup1276-女巫杯1276" class="headerlink" title="13、WitchCup1276 女巫杯1276"></a><a href="https://js13kgames.com/games/witchcup1276/index.html">13、WitchCup1276 女巫杯1276</a></h3><p><a href="https://github.com/DerBenniBanni/js13k2023_witch_racing">github</a><br><img src="https://github.blog/wp-content/uploads/2023/10/WitchCup1276.png?resize=1000,750?w=1000"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;js13kGames-是一年一度的在线游戏开发竞赛，挑战参赛者仅使用-13-KB-的-JavaScript-创建主题-HTML5-游戏，比赛鼓励在小文件大小的限制下进行创造力、优化和创新，从而产生各种独特且引人入胜的游戏，下面是获奖项目：&quot;&gt;&lt;a href=&quot;#j</summary>
       
     
     
