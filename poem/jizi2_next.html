@@ -39,17 +39,29 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="Document                                        #bg {             position: relative;             width: 100%;             height: 500px;             &#x2F;* background-color: white; *&#x2F;">
+    <meta name="description" content="Document                                                                                                               #bg {             position: relative;             width: 100%;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="临帖宝">
 <meta property="og:url" content="http://example.com/poem/jizi2_next.html">
 <meta property="og:site_name" content="临帖宝">
-<meta property="og:description" content="Document                                        #bg {             position: relative;             width: 100%;             height: 500px;             &#x2F;* background-color: white; *&#x2F;">
+<meta property="og:description" content="Document                                                                                                               #bg {             position: relative;             width: 100%;">
 <meta property="og:locale">
-<meta property="article:published_time" content="2024-09-11T06:10:37.496Z">
-<meta property="article:modified_time" content="2024-09-11T06:10:37.496Z">
+<meta property="og:image" content="http://example.com/poem/images/mizige.png">
+<meta property="og:image" content="http://example.com/poem/images/beijingyanse.png">
+<meta property="og:image" content="http://example.com/poem/images/setting.png">
+<meta property="og:image" content="http://example.com/poem/images/close.png">
+<meta property="og:image" content="http://example.com/poem/images/mc1.png">
+<meta property="og:image" content="http://example.com/poem/images/mc2.png">
+<meta property="og:image" content="http://example.com/poem/images/mc3.png">
+<meta property="og:image" content="http://example.com/poem/images/mc4.png">
+<meta property="og:image" content="http://example.com/poem/images/close.png">
+<meta property="og:image" content="http://example.com/poem/images/close.png">
+<meta property="og:image" content="http://example.com/poem/images/close.png">
+<meta property="article:published_time" content="2024-09-13T09:07:39.251Z">
+<meta property="article:modified_time" content="2024-09-13T09:07:39.251Z">
 <meta property="article:author" content="zhanghao">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/poem/images/mizige.png">
 
 
     
@@ -161,7 +173,7 @@
         
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-11</a>
+        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-13</a>
         
  
         
@@ -193,61 +205,105 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>Document</title>
+
     <script src="leancloud.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.0.0/jsencrypt.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
-    <script src="js/shufaDictJS.js"></script>
-    <!-- <link rel="stylesheet" href="css/shufaDictCSS.css"> -->
-    <style>
+    <script src="jizi2_next.js"></script>
+    <script src="jizi2_next_mi.js"></script>
+    <script src="jizi2_next_color.js"></script>
+    <script src="html2canvas.min.js"></script>
+    <script src="jizi2_switch.js"></script>
+    <script src="jizi2_next_setting.js"></script>
+    <script src="slider/slider.js"></script>
+    <script type="text/javascript" src="colorPicker/colorPicker.js"></script>
+    <script type="module" src="jizi2_slider.js"></script>
+    <script src="jizi2_next_change.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="colorPicker/colorPicker.css" />
+    <link rel="stylesheet" href="css/shufaDictCSS.css">
+    <link rel="stylesheet" href="jizi2_slider.css">
+    <link rel="stylesheet" href="jizi2_switch.css">
+    <link rel="stylesheet" href="slider/slider.css">
+
+   
+    <style>
         #bg {
             position: relative;
             width: 100%;
             height: 500px;
-            /* background-color: white; */
             display: flex;
             justify-content: center;
             align-items: center;
-            /* margin-top: 30px; */
-            border-radius: 10px;
-        }
-        #container {
-            position: relative;
-            /* width: 100%;
-            height: 500px; */
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* margin-top: 30px; */
             border-radius: 10px;
         }
 
-        #imageContainer {
-            /* width: 200px;
-            height: 200px; */
-            background-color: whitesmoke;
+        #container {
             position: relative;
-            /* 添加这行 */
+            background-color: whitesmoke;
             display: flex;
-            /* 添加这行 */
             justify-content: center;
-            /* 添加这行 */
             align-items: center;
-            /* 添加这行 */
+            border-radius: 10px;
         }
-        #imageContainer img {
+        #container2 {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            /* padding-top: 30px; */
+            overflow-y: auto;
+            height: 280px;
+            flex-direction: row;
+            align-content: flex-start;
+
+        }
+        .card img {
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+            z-index: 1;
+        }
+        .card {
+            border-radius: 5px;
+            width: 20%;
+            height: 25%;
+            padding: 5px;
+            overflow: hidden;
+            transition: transform 0.5s;
+            position: relative;
+         }
+        #imageContainer {
+            background-color: white;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .imgBg {
             width: 50px;
             height: 50px;
             border-radius: 0px !important;
             position: absolute;
         }
-
-        #buttonContainer {
+        .imgBg img {
+            width: 50px;
+            height: 50px;
+            border-radius: 0px !important;
+            position: absolute;
+        }
+        #buttonC {
             justify-content: center;
             align-items: center;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
         }
         #backButton {
             background-image: url('images/back.png');
@@ -255,7 +311,63 @@
             height: 20px;
             background-size: cover;
             cursor: pointer;
-            /* background-color: #666; */
+        }
+        #saveButton {
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        .mizige {
+            position: absolute;
+            display: none;
+        }
+
+        #modal {
+            display: none;
+            /* 默认隐藏 */
+            position: fixed;
+            height: 100px;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--bg-content-color);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            height: 150px;
+        }
+
+        .switch_container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            width: 70px;
+            height: 30px;
+            display: flex;
+            /* background-color: brown; */
+            align-items: center;
+            justify-content: center;
+        }
+
+
+
+        .modal2 {
+            display: none;
+            /* 默认隐藏 */
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--bg-content-color);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            height: 350px;
+            transition: opacity 0.5s ease; /* 设置过渡效果 */
         }
     </style>
 </head>
@@ -266,98 +378,146 @@
         <div></div>
         <div></div>
     </div>
-    <div id="buttonContainer">
+    <div id="buttonC">
         <div id="backButton"></div>
+        <div id="saveButton">保存</div>
     </div>
     <div id="bg">
         <div id="container">
             <div id="imageContainer"></div>
         </div>
     </div>
+
+    <div class="button-container">
+        <img id="button1" src="images/mizige.png" alt="按钮1" width="50" height="50" onclick="return false;">
+        <img id="button2" src="images/beijingyanse.png" alt="按钮2" width="50" height="50" onclick="return false;">
+        <img id="button3" src="images/setting.png" alt="按钮3" width="30" height="30" onclick="return false;">
+    </div>
+    <div id="overlay" class="overlay"></div>
+    <!-- 米字格弹窗 -->
+    <div id="modal" class="modal">
+        <img id="closeModalBtn" class="close-btn" src="images/close.png" width="30" height="30"
+            onclick="return false;"></img>
+
+        <div class="button-container">
+            <img id="modalButton1" src="images/mc1.png" alt="按钮1" onclick="return false;">
+            <img id="modalButton2" src="images/mc2.png" alt="按钮2" onclick="return false;">
+            <img id="modalButton3" src="images/mc3.png" alt="按钮3" onclick="return false;">
+            <img id="modalButton4" src="images/mc4.png" alt="按钮3" onclick="return false;">
+        </div>
+
+        <div class="switch_container">
+            <div class="switch">
+                <input id="one" class="input" type="checkbox" />
+                <label for="one" class="slider"></label>
+                <label for="one" class="label"></label>
+            </div>
+        </div>
+
+    </div>
+    <!-- 颜色设置 -->
+    <div id="color_modal" class="modal">
+        <img id="color_closeModalBtn" class="close-btn" src="images/close.png" width="30" height="30"
+            onclick="return false;"></img>
+
+        <div style="padding-bottom: 10px;">背景颜色</div>
+        <input type="color" id="cp" value="#F5F5F5">
+
+        <!-- <ul id="colors"> -->
+        </ul>
+
+    </div>
+
+    <!-- 其他设置 -->
+    <div id="setting_modal" class="modal2">
+
+        <img id="setting_closeModalBtn" class="close-btn" src="images/close.png" width="30" height="30"
+            onclick="return false;"></img>
+
+        <div style="padding-bottom: 10px;">每列图片数量</div>
+        <ul class="pagination">
+            <li class="page-prev">
+                <a class="prev" href="#"><svg t="1580195949197" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="4493" width="20" height="20">
+                        <path
+                            d="M906.78272 588.78976c-0.02048 8.4992-6.88128 15.36-15.38048 15.37024l-443.6992-0.01024 75.70432 191.68256c2.51904 6.42048 0.48128 13.76256-5.03808 17.90976-5.51936 4.16768-13.13792 4.1472-18.61632-0.09216l-376.5248-289.47456c-3.77856-2.89792-6.00064-7.41376-6.00064-12.16512 0-4.78208 2.22208-9.27744 6.00064-12.1856l376.5248-289.47456c2.7648-2.11968 6.06208-3.19488 9.37984-3.19488 3.23584 0 6.5024 1.03424 9.23648 3.10272 5.51936 4.1472 7.5776 11.48928 5.03808 17.90976L447.68256 419.84l443.71968-0.01024c8.4992 0.01024 15.36 6.88128 15.36 15.36L906.78272 588.78976z"
+                            p-id="4494" fill="#777777"></path>
+                    </svg></a>
+            </li>
+
+            <li class="page-number"><a href="#">4</a></li>
+            <li class="page-number active"><a href="#">5</a></li>
+            <li class="page-number"><a href="#">6</a></li>
+            <li class="page-number"><a href="#">7</a></li>
+            <li class="page-number"><a href="#">8</a></li>
+            <li class="page-next">
+                <a class="next" href="#"><svg t="1580195920917" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="4995" width="20" height="20">
+                        <path
+                            d="M906.77248 512c0 4.77184-2.21184 9.2672-5.9904 12.17536l-376.5248 289.4848c-2.7648 2.11968-6.06208 3.18464-9.3696 3.18464-3.25632 0-6.5024-1.03424-9.24672-3.09248-5.50912-4.15744-7.5776-11.48928-5.03808-17.90976l75.71456-191.67232L132.58752 604.17024c-8.48896 0-15.36-6.88128-15.36-15.36l0-153.6c0-8.48896 6.87104-15.36 15.36-15.36l443.72992 0-75.71456-191.68256c-2.53952-6.42048-0.47104-13.75232 5.04832-17.90976 5.50912-4.15744 13.12768-4.13696 18.60608 0.09216l376.5248 289.4848C904.56064 502.7328 906.77248 507.22816 906.77248 512z"
+                            p-id="4996" fill="#777777"></path>
+                    </svg></a>
+            </li>
+        </ul>
+
+        <div class="range-slider">
+            <div class="range-slider__range_margin" style="padding-bottom: 0px;" >边距（50）</div>
+            <input class="range-slider__range" type="range" value="50" min="0" max="100">
+            <!-- <span class="range-slider__value">33</span> -->
+        </div>
+
+           
+        <div class="range-slider">
+            <div class="range-slider__range_radius" style="padding-bottom: 0px;">圆角（10）</div>
+            <input class="range-slider__range" type="range" value="10" min="0" max="30">
+        </div>
+
+        <div class="range-slider">
+            <div class="range-slider__range_leftright" style="padding-bottom: 0px;">位置（0）</div>
+            <input class="range-slider__range" type="range" value="0" min="-20" max="20">
+        </div>
+
+    </div>
     
+
+    <!-- 跟换字 -->
+     <div id="change_modal" class="modal2">
+        <img id="change_closeModalBtn" class="close-btn" src="images/close.png" width="30" height="30"
+            onclick="return false;"></img>
+
+            <div id="container2"></div>
+    </div>
+
 </body>
 <script>
-    hiddenEle()
+
+    var dataArray = []
+    var number = 5
+    var currentImg = null
+    var currentImgIndex = 0
     initLeanCloud()
-    var elements = document.querySelector('.post-title__text');
-    elements.textContent = '集字'
-
-    var img = document.getElementById('backButton');
-    img.addEventListener('click', function () {
-        window.history.back()
+    setupUI()
+    initData(5)
+    setupSwitch()
+    rangeSlider();
+    var saveButton = document.getElementById('saveButton');
+    saveButton.addEventListener('click', function () {
+        savaPic()
     });
+   // 添加 change 事件监听器
+document.getElementById('cp').addEventListener('change', function (event) {
+    const selectedColor = event.target.value;
+    console.log('选中的颜色:', selectedColor);
+    const container = document.getElementById('container');
+    container.style.backgroundColor = selectedColor;
+});
 
-    var currentPage = 1;
-    var pageSize = 10;
-    const inputText = localStorage.getItem('jiziInputContent');
-    const cleanedText = retainChineseEnglishAndNumbers(inputText)
-    const characters = cleanedText.split(''); // 分割成单个字符数组
-    requestKey(handleData2)
-    function retainChineseEnglishAndNumbers(text) {
-        const regex = /[^\u4e00-\u9fa5a-zA-Z0-9]/g;
-        return text.replace(regex, '');
-    }
-    function handleData2(data) {
-        data.forEach(function (object) {
-            key = object.get('name')
-            requestZidianDict2(currentPage, pageSize, characters, handleData)
-        })
-    }
-    var container = document.getElementById("container");
-    function handleData(dataArr) {
-        var loading = document.querySelector('.loading');
-        loading.style.display = 'none';
-        renderImages(dataArr, 5)
-    }
-    function renderImages(dataArr, n) {
-        const imageContainer = document.getElementById('imageContainer');
-        const container = document.getElementById('container');
-
-        const imageSize = 50; // 图片宽高
-        let top = 0;
-        let left = 0;
-        let currentRow = 0
-        // let currentLie = 0
-        const lie = Math.ceil(dataArr.length / 5);
-        imageContainer.style.height = n * imageSize + 'px';
-        imageContainer.style.width = lie * imageSize + 'px';
-
-        container.style.height = n * imageSize + 50 + 'px';
-        container.style.width = lie * imageSize + 50 + 'px';
-        
-
-        for (let i = 0; i < dataArr.length; i++) {
-            const img = document.createElement('img');
-            let ob = dataArr[i];
-            const imgurl = ob.get('img');
-            if (imgurl == undefined) {
-                let str = 'https://image.lintiebao.cn/shufa/dic/' + ob.get('title') + '.jpg'
-                var decodedUrl = decodeURIComponent(str);
-                img.src = decodedUrl;
-            } else {
-                const encrypt = new JSEncrypt();
-                encrypt.setPrivateKey(key);
-                const decryptedData = encrypt.decrypt(imgurl);
-                var decodedUrl = decodeURIComponent(decryptedData);
-                img.src = decodedUrl;
-            }
-            img.style.position = 'absolute';
-            const lie = Math.floor(i / 5);
-            if (currentRow > 4) {
-                currentRow = 0
-            }
-            img.style.top = `${currentRow * 50}px`;
-            img.style.right = `${lie * 50}px`;
-            currentRow++
-            imageContainer.appendChild(img);
-        }
-    }
 </script>
 
 </html>
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2024-09-11</p></div> 
+    <div class="post-footer__meta"><p>updated at 2024-09-13</p></div> 
     <div class="post-entry__tags"></div> 
 </article>
 

@@ -514,6 +514,55 @@ function requestZidianDict(currentPage, pageSize, keyword, callback) {
 
     });
 }
+function requestZidianDict(currentPage, pageSize, keyword, callback) {
+
+    var classN = localStorage.getItem('dict_className') ?? "danzi";
+    const query = new AV.Query(classN);
+    query.contains("name", keyword);
+    query.limit(pageSize);
+    query.skip((currentPage - 1) * pageSize);
+    // 查询数据
+    query.find().then(function (results) {
+        console.log('results:', results)
+        var container = document.getElementById("container");
+        results.forEach(function (object) {
+            var newDiv = document.createElement("div");
+            newDiv.classList.add("card");
+            container.appendChild(newDiv);
+            var textDiv = document.createElement("div");
+            textDiv.classList.add("text");
+            newDiv.appendChild(textDiv);
+            var nameData = object.get('name');
+            var name = document.createElement("div");
+            name.classList.add("name");
+            name.textContent = nameData;
+            textDiv.appendChild(name);
+            var newImg = document.createElement("img");
+            var imgurl = object.get('img')
+            if (imgurl == undefined) {
+                var decodedUrl = decodeURIComponent('https://image.lintiebao.cn/shufa/dic/' + object.get('title') + '.jpg');
+                newImg.src = decodedUrl;
+            } else {
+                const encrypt = new JSEncrypt();
+                encrypt.setPrivateKey(key);
+                const decryptedData = encrypt.decrypt(imgurl);
+                var decodedUrl = decodeURIComponent(decryptedData);
+                newImg.src = decodedUrl;
+            }
+            newDiv.appendChild(newImg);
+            newImg.addEventListener('click', function () {
+                localStorage.setItem('dict_img', newImg.src);
+                localStorage.setItem('dict_name', nameData);
+                localStorage.setItem('dict_title', object.get('title'));
+                localStorage.setItem('dict_id', object.get('objectId'));
+                window.location.href = 'shufaDictDetail.html';
+            });
+        });
+        callback(results);
+    }).catch(function (error) {
+
+    });
+}
 function requestZidianDict2(currentPage, pageSize, characters, callback) {
     let dataArr = new Array(characters.length).fill(null); // 初始化存放结果数据的数组
     let classN = localStorage.getItem('dict_className') ?? "danzi";
@@ -522,6 +571,7 @@ function requestZidianDict2(currentPage, pageSize, characters, callback) {
     let completedRequests = 0; // 已完成的请求数量
 
     function sendRequest(character) {
+        console.log('character:', character);
         const query = new AV.Query(classN);
         query.contains("name", character);
         query.limit(pageSize);
@@ -529,20 +579,24 @@ function requestZidianDict2(currentPage, pageSize, characters, callback) {
 
         if (currentRequest < maxConcurrentRequests && completedRequests < characters.length) {
             currentRequest++;
+
             query.find().then(function(results) {
                 currentRequest--;
-
+                console.log('results:', results)
                 const randomIndex = Math.floor(Math.random() * results.length);
                 const result = results[randomIndex];
-
                 // 随机选择一个结果放入dataArr对应位置
-                const index = characters.indexOf(character);
+                const index = characters.indexOf(character); 
+                characters[index] = character + String(index);
+
+                console.log('index:', index);
                 if (dataArr[index] === null) {
                     const name = result.get('name');
+                    console.log('name:', name);
+                    console.log('character:', character);
                     if (name === character) {
                         dataArr[index] = result;
                         completedRequests++;
-
                         if (completedRequests === characters.length) {
                             if (dataArr.every(data => data !== null)) {
                                 // 按照characters顺序排序dataArr中的数据
@@ -558,6 +612,7 @@ function requestZidianDict2(currentPage, pageSize, characters, callback) {
                     }
                 }
             }).catch(function(error) {
+                console.log(error);
                 currentRequest--;
                 if (completedRequests !== characters.length) {
                     sendRequest(character); // 继续发送请求
@@ -565,9 +620,27 @@ function requestZidianDict2(currentPage, pageSize, characters, callback) {
             });
         }
     }
-
     characters.forEach(character => {
         sendRequest(character); // 发送每个字符的请求
+    });
+}
+function requestZidianDict3(currentPage, pageSize, keyword, callback) {
+
+    var classN = localStorage.getItem('dict_className') ?? "danzi";
+    const query = new AV.Query(classN);
+    query.contains("name", keyword);
+    query.limit(pageSize);
+    query.skip((currentPage - 1) * pageSize);
+    // 查询数据
+    query.find().then(function (results) {
+        console.log('results:', results)
+       
+        results.forEach(function (object) {
+           
+        });
+        callback(results);
+    }).catch(function (error) {
+
     });
 }
 function requestKey(callback) {
