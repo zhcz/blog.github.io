@@ -32,7 +32,7 @@ function mi_setupUI() {
         if (isSwitchOn) {
             const mizigeImgs = document.querySelectorAll('img.mizige');
             mizigeImgs.forEach(img => {
-                img.src = 'images/mc1.png';
+                img.src = 'images/m1.png';
                 img.style.display = 'block';
             });
         }
@@ -41,7 +41,7 @@ function mi_setupUI() {
         if (isSwitchOn) {
             const mizigeImgs = document.querySelectorAll('img.mizige');
             mizigeImgs.forEach(img => {
-                img.src = 'images/mc2.png';
+                img.src = 'images/m2.png';
                 img.style.display = 'block';
             });
         }
@@ -50,7 +50,7 @@ function mi_setupUI() {
         if (isSwitchOn) {
             const mizigeImgs = document.querySelectorAll('img.mizige');
             mizigeImgs.forEach(img => {
-                img.src = 'images/mc3.png';
+                img.src = 'images/m3.png';
                 img.style.display = 'block';
             });
         }
@@ -59,7 +59,7 @@ function mi_setupUI() {
         if (isSwitchOn) {
             const mizigeImgs = document.querySelectorAll('img.mizige');
             mizigeImgs.forEach(img => {
-                img.src = 'images/mc4.png';
+                img.src = 'images/m4.png';
                 img.style.display = 'block';
             });
         }

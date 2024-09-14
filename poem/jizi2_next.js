@@ -54,9 +54,14 @@ function defaultUI() {
     img.addEventListener('click', function () {
         window.history.back()
     });
+
+    document.getElementById('button4').addEventListener('click', frame_openModal);
+
+    localStorage.setItem('dict_className', "danzi");
 }
 function initData(num) {
 
+    
     var currentPage = 1;
     var pageSize = 10;
     number = num
@@ -133,8 +138,6 @@ function initData(num) {
             function handleLongPress() {
                 currentImg = img
                 currentImgIndex = i
-                console.log(currentImg)
-                console.log(currentImgIndex)
                 // alert('图片被长按了！');
                 // 在这里添加你想要执行的操作
                 // window.location.href = 'shufaDict.html';
@@ -184,7 +187,6 @@ function requestData(results) {
         setImgData(newImg, object);
         newDiv.appendChild(newImg);
         newImg.addEventListener('click', function () {
-
             setImgData(currentImg, object);
             dataArray[currentImgIndex] = object;
         });
@@ -200,6 +202,21 @@ function savaPic() {
         link.href = canvas.toDataURL('image/png');
         link.download = 'screenshot.png';
         link.click();
+    });
+}
+function frame_openModal() {
+
+    html2canvas(document.getElementById('container'), {
+        useCORS: true,
+        allowTaint: false
+    }).then(function (canvas) {
+        // 将截图保存为图片
+          // 将画布转换为 Data URL
+          const imgData = canvas.toDataURL('image/png');
+          // 将图片数据存储到 Local Storage
+          localStorage.setItem('jizi2_screenshot', imgData);
+          // 跳转到下一个页面
+          window.location.href = 'jizi2_frame.html'; // 替换为你的目标页面
     });
 }
 

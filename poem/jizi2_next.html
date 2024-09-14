@@ -39,16 +39,17 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="Document                                                                                                               #bg {             position: relative;             width: 100%;">
+    <meta name="description" content="Document                                                                                                                    #bg {             position: relative;             width:">
 <meta property="og:type" content="website">
 <meta property="og:title" content="临帖宝">
 <meta property="og:url" content="http://example.com/poem/jizi2_next.html">
 <meta property="og:site_name" content="临帖宝">
-<meta property="og:description" content="Document                                                                                                               #bg {             position: relative;             width: 100%;">
+<meta property="og:description" content="Document                                                                                                                    #bg {             position: relative;             width:">
 <meta property="og:locale">
 <meta property="og:image" content="http://example.com/poem/images/mizige.png">
 <meta property="og:image" content="http://example.com/poem/images/beijingyanse.png">
 <meta property="og:image" content="http://example.com/poem/images/setting.png">
+<meta property="og:image" content="http://example.com/poem/images/zhuangbiao.png">
 <meta property="og:image" content="http://example.com/poem/images/close.png">
 <meta property="og:image" content="http://example.com/poem/images/mc1.png">
 <meta property="og:image" content="http://example.com/poem/images/mc2.png">
@@ -57,8 +58,8 @@
 <meta property="og:image" content="http://example.com/poem/images/close.png">
 <meta property="og:image" content="http://example.com/poem/images/close.png">
 <meta property="og:image" content="http://example.com/poem/images/close.png">
-<meta property="article:published_time" content="2024-09-13T09:07:39.251Z">
-<meta property="article:modified_time" content="2024-09-13T09:07:39.251Z">
+<meta property="article:published_time" content="2024-09-14T09:13:08.226Z">
+<meta property="article:modified_time" content="2024-09-14T09:13:08.226Z">
 <meta property="article:author" content="zhanghao">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/poem/images/mizige.png">
@@ -173,7 +174,7 @@
         
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-13</a>
+        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-14</a>
         
  
         
@@ -228,8 +229,8 @@
     <link rel="stylesheet" href="jizi2_slider.css">
     <link rel="stylesheet" href="jizi2_switch.css">
     <link rel="stylesheet" href="slider/slider.css">
-
-   
+    <link rel="stylesheet" href="jizi2_next_frame.css">
+    <link rel="stylesheet" href="css/select_button.css">
     <style>
         #bg {
             position: relative;
@@ -249,6 +250,7 @@
             align-items: center;
             border-radius: 10px;
         }
+
         #container2 {
             display: flex;
             flex-wrap: wrap;
@@ -260,6 +262,7 @@
             align-content: flex-start;
 
         }
+
         .card img {
             border-radius: 10px;
             overflow: hidden;
@@ -270,6 +273,7 @@
             transition: transform 0.5s;
             z-index: 1;
         }
+
         .card {
             border-radius: 5px;
             width: 20%;
@@ -278,7 +282,8 @@
             overflow: hidden;
             transition: transform 0.5s;
             position: relative;
-         }
+        }
+
         #imageContainer {
             background-color: white;
             position: relative;
@@ -286,18 +291,21 @@
             justify-content: center;
             align-items: center;
         }
+
         .imgBg {
             width: 50px;
             height: 50px;
             border-radius: 0px !important;
             position: absolute;
         }
+
         .imgBg img {
             width: 50px;
             height: 50px;
             border-radius: 0px !important;
             position: absolute;
         }
+
         #buttonC {
             justify-content: center;
             align-items: center;
@@ -305,6 +313,7 @@
             flex-wrap: nowrap;
             justify-content: space-between;
         }
+
         #backButton {
             background-image: url('images/back.png');
             width: 20px;
@@ -312,6 +321,7 @@
             background-size: cover;
             cursor: pointer;
         }
+
         #saveButton {
             background-size: cover;
             cursor: pointer;
@@ -353,8 +363,6 @@
             justify-content: center;
         }
 
-
-
         .modal2 {
             display: none;
             /* 默认隐藏 */
@@ -367,7 +375,8 @@
             padding: 20px;
             text-align: center;
             height: 350px;
-            transition: opacity 0.5s ease; /* 设置过渡效果 */
+            transition: opacity 0.5s ease;
+            /* 设置过渡效果 */
         }
     </style>
 </head>
@@ -392,7 +401,20 @@
         <img id="button1" src="images/mizige.png" alt="按钮1" width="50" height="50" onclick="return false;">
         <img id="button2" src="images/beijingyanse.png" alt="按钮2" width="50" height="50" onclick="return false;">
         <img id="button3" src="images/setting.png" alt="按钮3" width="30" height="30" onclick="return false;">
+        <img id="button4" src="images/zhuangbiao.png" alt="按钮4" width="30" height="30" onclick="return false;">
     </div>
+    <div class="button-container">
+        <form action="">
+            <input type="radio" name="rdo" id="yes" checked />
+            <input type="radio" name="rdo" id="no" />
+            <div class="segment_switch">
+                <label for="yes">楷书</label>
+                <label for="no">行书</label>
+                <span></span>
+            </div>
+        </form>
+    </div>
+
     <div id="overlay" class="overlay"></div>
     <!-- 米字格弹窗 -->
     <div id="modal" class="modal">
@@ -415,17 +437,15 @@
         </div>
 
     </div>
+
     <!-- 颜色设置 -->
     <div id="color_modal" class="modal">
         <img id="color_closeModalBtn" class="close-btn" src="images/close.png" width="30" height="30"
             onclick="return false;"></img>
-
         <div style="padding-bottom: 10px;">背景颜色</div>
         <input type="color" id="cp" value="#F5F5F5">
 
-        <!-- <ul id="colors"> -->
         </ul>
-
     </div>
 
     <!-- 其他设置 -->
@@ -461,12 +481,12 @@
         </ul>
 
         <div class="range-slider">
-            <div class="range-slider__range_margin" style="padding-bottom: 0px;" >边距（50）</div>
+            <div class="range-slider__range_margin" style="padding-bottom: 0px;">边距（50）</div>
             <input class="range-slider__range" type="range" value="50" min="0" max="100">
             <!-- <span class="range-slider__value">33</span> -->
         </div>
 
-           
+
         <div class="range-slider">
             <div class="range-slider__range_radius" style="padding-bottom: 0px;">圆角（10）</div>
             <input class="range-slider__range" type="range" value="10" min="0" max="30">
@@ -478,15 +498,18 @@
         </div>
 
     </div>
-    
 
-    <!-- 跟换字 -->
-     <div id="change_modal" class="modal2">
+    <!-- 更换字 -->
+    <div id="change_modal" class="modal2">
         <img id="change_closeModalBtn" class="close-btn" src="images/close.png" width="30" height="30"
             onclick="return false;"></img>
-
-            <div id="container2"></div>
+        <div id="container2"></div>
     </div>
+
+    
+
+
+
 
 </body>
 <script>
@@ -504,20 +527,43 @@
     saveButton.addEventListener('click', function () {
         savaPic()
     });
-   // 添加 change 事件监听器
-document.getElementById('cp').addEventListener('change', function (event) {
-    const selectedColor = event.target.value;
-    console.log('选中的颜色:', selectedColor);
-    const container = document.getElementById('container');
-    container.style.backgroundColor = selectedColor;
-});
+    // 添加 change 事件监听器
+    document.getElementById('cp').addEventListener('change', function (event) {
+        const selectedColor = event.target.value;
+        const container = document.getElementById('container');
+        container.style.backgroundColor = selectedColor;
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var radioButtons = document.querySelectorAll('input[type="radio"][name="rdo"]');
+
+        radioButtons.forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                if (this.checked) {
+                    if (this.id === 'yes') {
+                        console.log('楷书被选中');
+                        // 在这里添加楷书被选中时的逻辑
+                        localStorage.setItem('dict_className', "danzi");
+                        document.getElementById("imageContainer").innerHTML = "";
+                        initData(number);
+                    } else if (this.id === 'no') {
+                        console.log('行书被选中');
+                        localStorage.setItem('dict_className', "danzi_tianyingzhang_xingshu");
+                        // 在这里添加行书被选中时的逻辑
+                        document.getElementById("imageContainer").innerHTML = "";
+                        initData(number);
+                    }
+                }
+            });
+        });
+    });
 
 </script>
 
 </html>
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2024-09-13</p></div> 
+    <div class="post-footer__meta"><p>updated at 2024-09-14</p></div> 
     <div class="post-entry__tags"></div> 
 </article>
 

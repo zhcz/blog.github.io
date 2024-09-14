@@ -6,8 +6,6 @@ function change_openModal() {
 
     change_modal.style.display = 'block';
     overlay.style.display = 'block';
-
-
 }
 // 关闭弹窗函数
 function change_closeModal() {

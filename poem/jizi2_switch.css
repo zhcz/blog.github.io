@@ -39,10 +39,11 @@
     left: 16px;
 }
 .switch .input:checked ~ .slider {
-    background: #fc5d9b;
+    background: #95b6b5;
+    /* opacity: 0.6; */
 }
 .switch .input:checked ~ .slider:after {
-    background: #ef0460;
+    background: var(--main-color);
 }
 .center {
     font-family: 'Source Sans Pro', sans-serif;

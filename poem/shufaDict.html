@@ -46,8 +46,8 @@
 <meta property="og:site_name" content="临帖宝">
 <meta property="og:description" content="字帖                             html,     body {       margin: 0;       padding: 0;     }      #container {       display: flex;       flex-wrap: wrap;       justify-content: space-between">
 <meta property="og:locale">
-<meta property="article:published_time" content="2024-09-13T07:35:45.836Z">
-<meta property="article:modified_time" content="2024-09-13T07:35:45.836Z">
+<meta property="article:published_time" content="2024-09-14T09:15:24.067Z">
+<meta property="article:modified_time" content="2024-09-14T09:15:24.067Z">
 <meta property="article:author" content="zhanghao">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -161,7 +161,7 @@
         
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-13</a>
+        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-14</a>
         
  
         
@@ -342,18 +342,18 @@
   </div> -->
   <script>
     hiddenEle()
-    // function isWeChat() {
-    //   var ua = window.navigator.userAgent.toLowerCase();
-    //   return ua.indexOf('micromessenger') !== -1;
-    // }
-    // if (!isWeChat()) {
-    //   alert('请关注公众号“临帖宝”，使用“田楷字典”！');
-    //   window.opener = null;
-    //   window.close();
-    //   setTimeout(function () {
-    //     window.history.back();
-    //   }, 100);
-    // }
+    function isWeChat() {
+      var ua = window.navigator.userAgent.toLowerCase();
+      return ua.indexOf('micromessenger') !== -1;
+    }
+    if (!isWeChat()) {
+      alert('请关注公众号“临帖宝”，使用“田楷字典”！');
+      window.opener = null;
+      window.close();
+      setTimeout(function () {
+        window.history.back();
+      }, 100);
+    }
     localStorage.removeItem('searchDictKeyword', "");
     var elements = document.querySelector('.post-title__text');
     elements.textContent = localStorage.getItem('dictMore_name');
@@ -420,7 +420,7 @@
 </html>
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2024-09-13</p></div> 
+    <div class="post-footer__meta"><p>updated at 2024-09-14</p></div> 
     <div class="post-entry__tags"></div> 
 </article>
 
