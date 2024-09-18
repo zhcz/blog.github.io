@@ -46,8 +46,8 @@
 <meta property="og:site_name" content="临帖宝">
 <meta property="og:description" content="Document                                                                                    #backButton {         background-image: url(&#39;images&#x2F;back.png&#39;);         width: 20px;">
 <meta property="og:locale">
-<meta property="article:published_time" content="2024-09-14T09:14:58.418Z">
-<meta property="article:modified_time" content="2024-09-14T09:14:58.418Z">
+<meta property="article:published_time" content="2024-09-18T02:51:52.977Z">
+<meta property="article:modified_time" content="2024-09-18T02:51:52.977Z">
 <meta property="article:author" content="zhanghao">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -161,7 +161,7 @@
         
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-14</a>
+        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-18</a>
         
  
         
@@ -221,7 +221,6 @@
         background-size: cover;
         cursor: pointer;
     }
-
     #buttonC {
         justify-content: center;
         align-items: center;
@@ -236,7 +235,7 @@
 
     <div id="buttonC">
         <div id="backButton"></div>
-        <!-- <div id="saveButton">保存</div> -->
+        <div style="display: none;" id="saveButton">保存</div>
     </div>
 
     <div id="frame_container">
@@ -254,8 +253,8 @@
             <img id="frame_image2" src="" alt="frame" />
         </div>
 
-       
-        
+
+
     </div>
 
 
@@ -302,7 +301,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             // 从 Local Storage 中获取图片数据
 
-          
+
 
             const imgData = localStorage.getItem('jizi2_screenshot');
             if (imgData) {
@@ -340,17 +339,65 @@
         });
         function savaPic() {
             const parentElement = document.getElementById('frame_container');
-             const frame2 = parentElement.querySelector('.frame2');
+            const frame2 = parentElement.querySelector('.frame2');
+
             html2canvas(parentElement, {
                 useCORS: true,
-                allowTaint: false,
-                scale: 2, // 尝试使用更高的比例
+                allowTaint: false
             }).then(function (canvas) {
-                // 将截图保存为图片
-                var link = document.createElement('a');
-                link.href = canvas.toDataURL('image/png');
-                link.download = 'screenshot.png';
-                link.click();
+                if (!canvas) {
+                    console.error('Canvas is null or undefined');
+                    return;
+                }
+                // const contain = document.getElementById('container');
+                parentElement.style.visibility = 'hidden'; // 使用 visibility 而不是 display
+
+                var overlay = document.createElement('div');
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.backgroundColor = 'rgba(0,0,0,0.8)';
+                overlay.style.zIndex = '9999';
+                overlay.style.display = 'flex';
+                overlay.style.flexDirection = 'column';
+                overlay.style.alignItems = 'center';
+                overlay.style.justifyContent = 'center';
+
+                var imgContainer = document.createElement('div');
+                imgContainer.style.display = 'flex';
+                imgContainer.style.flexDirection = 'column';
+                imgContainer.style.alignItems = 'center';
+                imgContainer.style.maxWidth = '90%';
+                imgContainer.style.maxHeight = '90%';
+
+                var img = document.createElement('img');
+                img.src = canvas.toDataURL('image/png');
+                img.style.maxWidth = '100%';
+                img.style.maxHeight = '80vh';
+                img.style.objectFit = 'contain';
+
+                var closeButton = document.createElement('button');
+                closeButton.textContent = '关闭';
+                closeButton.style.marginTop = '20px';
+                closeButton.style.padding = '10px 20px';
+                closeButton.style.fontSize = '16px';
+                closeButton.style.cursor = 'pointer';
+                closeButton.onclick = function () {
+                    document.body.removeChild(overlay);
+                    parentElement.style.visibility = 'visible'; // 恢复可见性
+                };
+
+                imgContainer.appendChild(img);
+                imgContainer.appendChild(closeButton);
+                overlay.appendChild(imgContainer);
+                document.body.appendChild(overlay);
+
+                // 使用 setTimeout 来延迟显示提示，确保图片已经渲染
+                setTimeout(function () {
+                    alert('请长按图片并选择"保存图像"来下载截图');
+                }, 100);
             });
         }
 
@@ -363,47 +410,47 @@
             return vh.toFixed(2) + 'vh';
         }
 
-         // 添加 change 事件监听器
-    document.getElementById('cp').addEventListener('change', function (event) {
-        const selectedColor = event.target.value;
-        const parentElement = document.getElementById('frame_container');
-        const childElements = parentElement.querySelector('.frame2');
-        childElements.style.backgroundColor = selectedColor;
-    });
-
-    var sliders = document.querySelectorAll('.range-slider');
-    sliders.forEach(function(slider,index) {
-        var range = slider.querySelector('.range-slider__range');
-        var value = slider.querySelector('.range-slider__value');
-        
-        const parentElement = document.getElementById('frame_container');
-        const frame2 = parentElement.querySelector('.frame2');
-        const img2 = document.getElementById('frame_image2');
-        range.addEventListener('input', function() {
-            if (index == 0) {
-                var value = document.querySelector('.range-slider__range_margin');
-                frame2.style.padding = Number(this.value) + 'px';
-                value.textContent = '边距' + '（' + this.value + '）'
-            }
-            if (index == 1){
-                var value = document.querySelector('.range-slider__range_radius');
-                value.textContent = '圆角' + '（' + this.value + '）'
-                img2.style.borderRadius = Number(this.value) + 'px';
-            }
-            if (index == 2) {
-                var value = document.querySelector('.range-slider__range_leftright');
-                frame2.style.height = Number(this.value) + 'vh';
-                value.textContent = '大小' + '（' + this.value + '）'
-            }
+        // 添加 change 事件监听器
+        document.getElementById('cp').addEventListener('change', function (event) {
+            const selectedColor = event.target.value;
+            const parentElement = document.getElementById('frame_container');
+            const childElements = parentElement.querySelector('.frame2');
+            childElements.style.backgroundColor = selectedColor;
         });
-    });
+
+        var sliders = document.querySelectorAll('.range-slider');
+        sliders.forEach(function (slider, index) {
+            var range = slider.querySelector('.range-slider__range');
+            var value = slider.querySelector('.range-slider__value');
+
+            const parentElement = document.getElementById('frame_container');
+            const frame2 = parentElement.querySelector('.frame2');
+            const img2 = document.getElementById('frame_image2');
+            range.addEventListener('input', function () {
+                if (index == 0) {
+                    var value = document.querySelector('.range-slider__range_margin');
+                    frame2.style.padding = Number(this.value) + 'px';
+                    value.textContent = '边距' + '（' + this.value + '）'
+                }
+                if (index == 1) {
+                    var value = document.querySelector('.range-slider__range_radius');
+                    value.textContent = '圆角' + '（' + this.value + '）'
+                    img2.style.borderRadius = Number(this.value) + 'px';
+                }
+                if (index == 2) {
+                    var value = document.querySelector('.range-slider__range_leftright');
+                    frame2.style.height = Number(this.value) + 'vh';
+                    value.textContent = '大小' + '（' + this.value + '）'
+                }
+            });
+        });
     </script>
 </body>
 
 </html>
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2024-09-14</p></div> 
+    <div class="post-footer__meta"><p>更新于 2024-09-18</p></div> 
     <div class="post-entry__tags"></div> 
 </article>
 
