@@ -39,15 +39,15 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="Document                                床前明月光，疑是地上霜。">
+    <meta name="description" content="Document                                       * {             padding: 0;             margin: 0;             box-sizing: border-box;         }         body {             padding-to">
 <meta property="og:type" content="website">
 <meta property="og:title" content="临帖宝">
 <meta property="og:url" content="http://example.com/poem/famousSentencesDetail.html">
 <meta property="og:site_name" content="临帖宝">
-<meta property="og:description" content="Document                                床前明月光，疑是地上霜。">
+<meta property="og:description" content="Document                                       * {             padding: 0;             margin: 0;             box-sizing: border-box;         }         body {             padding-to">
 <meta property="og:locale">
-<meta property="article:published_time" content="2024-09-14T08:06:00.575Z">
-<meta property="article:modified_time" content="2024-09-14T08:06:00.575Z">
+<meta property="article:published_time" content="2024-09-18T08:54:53.656Z">
+<meta property="article:modified_time" content="2024-09-18T08:54:53.656Z">
 <meta property="article:author" content="zhanghao">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -161,7 +161,7 @@
         
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-14</a>
+        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-18</a>
         
  
         
@@ -190,23 +190,192 @@
         
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.14/lottie.min.js"></script>
+    <script src="jizi2_next.js"></script>
+    <script src="leancloud.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            padding-top: 100px;
+            text-align: center;
+            background-color: #111;
+            color: #fff;
+            overflow: hidden;
+        }
+        #text-animate {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        #lottie-container {
+            width: 50px;
+            height: 50px;
+            align-content: center;
+            transform: rotate(-90deg);
+        }
+        #backButton {
+            background-image: url('images/back.png');
+            width: 20px;
+            height: 20px;
+            background-size: cover;
+            cursor: pointer;
+        }
+        #buttonC {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+    </style>
 </head>
 <body>
-    <div id="text-animate">
-        <h1>
-          床前明月光，疑是地上霜。
-        </h1>
+    <div id="buttonC">
+        <div id="backButton"></div>
+        <div id="saveButton">集</div>
     </div>
+    <div id="text-animate">
+        <h3 class="text-animate"></h3>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <div id="lottie-container"></div>
+    </div>
+    <script>
+        var dataArr = []
+        hiddenEle();
+        var elements = document.querySelector('.post-title__text');
+        elements.textContent = '今日写什么'
+        var img = document.getElementById('backButton');
+        img.addEventListener('click', function () {
+            window.history.back()
+        });
+        var img2 = document.getElementById('saveButton');
+        img2.addEventListener('click', function () {
+            const inputText = document.getElementById("text-animate");
+            const text = inputText.innerText;
+            localStorage.setItem('jiziInputContent', text);
+            window.location.href = 'jizi2_next.html';
+        });
+
+        var container = document.getElementById('lottie-container');
+        var animation = lottie.loadAnimation({
+            container: document.getElementById('lottie-container'), // 动画容器
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'images/Comp.json' // 你的 Lottie JSON 文件路径
+        });
+
+        animation.addEventListener('DOMLoaded', function() {
+    var svg = container.querySelector('svg');
+    svg.addEventListener('click', function(event) {
+            // console.log('SVG 被点击了');
+            // 在这里添加你的点击处理逻辑
+            // 你可以使用 event.target 来确定具体哪个元素被点击了
+            // console.log('被点击的元素:', event.target);
+            index += 1
+            if (index < dataArr.length) {
+                setData()
+            }else{
+                random_requestFamousSentences(currentPage, pageSize, '', handleData)
+            }
+        });
+});
+
+        // container.addEventListener('click', function() {
+            // print(index)
+           
+        // });
+        function textAnimate() {
+            var textBox = $(".text-animate");
+            var text = textBox.text();
+            function addWrapped(text) {
+                var text_arr = text.trim().split("");
+                var _tmp = '';
+                var this_symbol = '';
+                for (var i = 0; i < text_arr.length; i++) {
+                    this_symbol = text_arr[i];
+                    if (isSpace(this_symbol) && isSpace(text_arr[i + 1])) {
+                        continue;
+                    }
+                    var x = getRandom(200);
+                    var y = getRandom(200);
+                    x = (getRandom(2) == 1) ? x * -1 : x;
+                    y = (getRandom(2) == 1) ? y * -1 : y;
+                    var style = [
+                        'transform: translate(' + x + 'px, ' + y + 'px)',
+                        'display: inline-block',
+                        'transition : .8s'
+                    ];
+                    this_symbol = (isSpace(this_symbol)) ? '&nbsp;' : this_symbol;
+                    _tmp += '<span class="translated-element" style="' + style.join(";") + '">' + this_symbol + '</span>';
+                }
+                return _tmp;
+            }
+            // checks is symbol space or tab or newline character
+            function isSpace(s) {
+                if (s == '\t' || s == '\n' || s == ' ') {
+                    return true;
+                }
+                return false;
+            }
+            // console.log(addWrapped(text));
+            textBox.html(addWrapped(text));
+            // returns random number
+            function getBack(selector) {
+                $(selector).css({
+                    'transform': ''
+                });
+            }
+            setTimeout(function () {
+                getBack('.translated-element');
+            }, 100);
+            function getRandom(max) {
+                return Math.ceil(Math.random() * max);
+            }
+        }
+        var currentPage = 1;
+        var pageSize = 3; // 每页显示的条目数
+        var index = 0;
+        initLeanCloud()
+        let arr = localStorage.getItem('famousSentencesArray');
+            if (arr != null) {
+                const i = localStorage.getItem('famousSentencesIndex') 
+                index = Number(i);
+                dataArr = JSON.parse(arr);
+                setData()
+            }else{
+                random_requestFamousSentences(currentPage, pageSize, '', handleData)
+            }
+        function handleData(results) {
+            index = 0
+            dataArr = results
+            setData()
+        }
+        function setData() {
+            const obj = dataArr[index]
+            const text = obj.name;
+            const h = document.getElementById("text-animate");
+            h.innerHTML = text;
+            textAnimate()
+        }
+    </script>
 </body>
 </html>
     </div>
      
-    <div class="post-footer__meta"><p>更新于 2024-09-14</p></div> 
+    <div class="post-footer__meta"><p>updated at 2024-09-18</p></div> 
     <div class="post-entry__tags"></div> 
 </article>
 

@@ -56,8 +56,8 @@
 <meta property="og:image" content="http://example.com/poem/images/mc2.png">
 <meta property="og:image" content="http://example.com/poem/images/mc3.png">
 <meta property="og:image" content="http://example.com/poem/images/mc4.png">
-<meta property="article:published_time" content="2024-09-14T07:45:57.589Z">
-<meta property="article:modified_time" content="2024-09-14T07:45:57.589Z">
+<meta property="article:published_time" content="2024-09-18T09:05:00.357Z">
+<meta property="article:modified_time" content="2024-09-18T09:05:00.357Z">
 <meta property="article:author" content="zhanghao">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/poem/images/m1.png">
@@ -172,7 +172,7 @@
         
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-14</a>
+        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-18</a>
         
  
         
@@ -285,16 +285,16 @@
         return JSON.parse(localStorage.getItem('imageUrls')) || [];
     }
     // 更新徽章显示
-    function updateBadge() {
-        const badge = document.getElementById('imageBadge');
-        const count = getImageCount();
-        if (count === 0) {
-            badge.style.display = 'none';
-        } else {
-            badge.style.display = 'flex';
-            badge.textContent = count;
-        }
-    }
+    // function updateBadge() {
+    //     const badge = document.getElementById('imageBadge');
+    //     const count = getImageCount();
+    //     if (count === 0) {
+    //         badge.style.display = 'none';
+    //     } else {
+    //         badge.style.display = 'flex';
+    //         badge.textContent = count;
+    //     }
+    // }
 
     // 获取存储的图片数量
     function getImageCount() {
@@ -302,17 +302,19 @@
         return imageUrls.length;
     }
     // 页面加载时更新徽章
-    document.addEventListener('DOMContentLoaded', updateBadge);
+    // document.addEventListener('DOMContentLoaded', updateBadge);
     var img = document.getElementById('backButton');
     img.addEventListener('click', function () {
+        sessionStorage.setItem('returnedFromDetail', 'true');
         window.history.back()
+        
     });
 </script>
 
 </html>
     </div>
      
-    <div class="post-footer__meta"><p>更新于 2024-09-14</p></div> 
+    <div class="post-footer__meta"><p>updated at 2024-09-18</p></div> 
     <div class="post-entry__tags"></div> 
 </article>
 
