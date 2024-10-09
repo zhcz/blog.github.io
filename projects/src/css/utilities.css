@@ -190,6 +190,14 @@ h2::selection {
   background: url(../assets/project/removebg.webp) center center/cover;
 }
 
+.card:nth-child(12) {
+  background: url(../assets/project/removebg.webp) center center/cover;
+}
+
+.card:nth-child(13) {
+  background: url(../assets/project/poem.webp) center center/cover;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .header-container {

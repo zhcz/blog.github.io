@@ -39,15 +39,15 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="字帖                     .poem-container {       display: flex;       align-items: center;     }     .image-wrapper {       margin-top: 10px;       width: 70px; &#x2F;* Set the width of the image">
+    <meta name="description" content="字帖                        .poem-container {       display: flex;       align-items: center;     }     .image-wrapper {       margin-top: 10px;       width: 70px; &#x2F;* Set the width of the ima">
 <meta property="og:type" content="website">
 <meta property="og:title" content="临帖宝">
 <meta property="og:url" content="http://example.com/poem/zitie.html">
 <meta property="og:site_name" content="临帖宝">
-<meta property="og:description" content="字帖                     .poem-container {       display: flex;       align-items: center;     }     .image-wrapper {       margin-top: 10px;       width: 70px; &#x2F;* Set the width of the image">
+<meta property="og:description" content="字帖                        .poem-container {       display: flex;       align-items: center;     }     .image-wrapper {       margin-top: 10px;       width: 70px; &#x2F;* Set the width of the ima">
 <meta property="og:locale">
-<meta property="article:published_time" content="2024-09-11T06:34:40.456Z">
-<meta property="article:modified_time" content="2024-09-11T06:34:40.456Z">
+<meta property="article:published_time" content="2024-09-29T09:49:54.753Z">
+<meta property="article:modified_time" content="2024-09-29T09:49:54.753Z">
 <meta property="article:author" content="zhanghao">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -161,7 +161,7 @@
         
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-11</a>
+        <a href="/archives/2024/09/" class="post-meta__date button">2024-09-29</a>
         
  
         
@@ -187,14 +187,14 @@
 <article class="post content-card">
     <div class="post__header"></div>
     <div class="post__content">
-        
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
   <title>字帖</title>
   <script src="leancloud.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.0.0/jsencrypt.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
   <link rel="stylesheet" href="loading.css">
   <link rel="stylesheet" href="leancloud.css">
@@ -210,10 +210,19 @@
       height: 100px; /* Set the height of the image container */
       overflow: hidden; /* Hide any overflowing content */
     }
+    #backButton {
+          background-image: url('images/back.png');
+          width: 20px;
+          height: 20px;
+          background-size: cover;
+          cursor: pointer;
+          /* background-color: #666; */
+      }
   </style>
 </head>
 <body>
 
+  <div id="backButton" ></div>
       <main class="main">
         <div id="search">
             <form class="search-form" action="javascript:return true" autocomplete="off" onsubmit="return false;">
@@ -250,10 +259,23 @@
   
      var currentPage = 1;
     var pageSize = 10; // 每页显示的条目数
+    var key = ""
     initLeanCloud()
-    requestZitie(currentPage,pageSize,'',handleData)
+   
+    requestKey(handleData2)
 
-    const query = new AV.Query("zitie_pdf2");
+    function handleData2(data) {
+      data.forEach(function (object) {
+        key = object.get('name')
+        var keyword = ""
+       
+        requestZitie(currentPage,pageSize,'',handleData)
+      })
+    }
+    const encrypt = new JSEncrypt();
+
+    
+    const query = new AV.Query("zitie_pdf");
     query.count().then((count) => {
       var elements = document.getElementById('count');
       elements.textContent = '目前已收录' + count + '本'
@@ -305,38 +327,21 @@
         }
       });
     });
+    var img = document.getElementById('backButton');
+        img.addEventListener('click', function () {
+            window.history.back()
+       });
   </script>
 </body>
 </html>
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2024-09-11</p></div> 
+    <div class="post-footer__meta"><p>updated at 2024-09-29</p></div> 
     <div class="post-entry__tags"></div> 
 </article>
 
 
 
-
-    <div class="post__comments content-card" id="comment">
-        
-    <h4>Comments</h4>
-    
-    
-    
-    <div id="valine_container" class="valine_thread"></div>
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-    </div>
 
 
 
@@ -634,63 +639,6 @@
 
  
 
-
-    
-
-    
-
-    
-    
-    <script>
-        function loadComment() {
-            let e;
-            (e = document.createElement("script")).src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
-            document.body.appendChild(e);
-            e.onload = () => {
-                var valineConfig = {"appId":"ynMAn7XOvvxivG61hKnibx0P-gzGzoHsz","appKey":"bJozAX2UEPCNqmriHhTiceIc","placeholder":"说点什么吧！","path":null,"avatar":null,"meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":true,"highlight":null,"avatarForce":null,"recordIP":true,"serverURLs":"https://api.yuedingdaojia.cn","enableQQ":true,"requiredFields":["nick","mail"],"emojiCDN":null,"emojiMaps":null};
-                valineConfig.el = '#valine_container';
-                for (var i in valineConfig) {
-                    if (valineConfig[i] === null) delete valineConfig[i];
-                }
-                new Valine(valineConfig);
-            };
-        }
-    
-        var runningOnBrowser = typeof window !== "undefined";
-        var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
-        var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
-    
-        setTimeout(function () {
-            if (!isBot && supportsIntersectionObserver) {
-                var comment_observer = new IntersectionObserver(function(entries) {
-                    if (entries[0].isIntersecting) {
-                        loadComment();
-                        comment_observer.disconnect();
-                    }
-                }, { threshold: [0] });
-                comment_observer.observe(document.getElementById('comment'));
-            } else {
-                loadComment();
-            }
-        }, 1);
-    </script>
-
-
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-    
 
 
 
