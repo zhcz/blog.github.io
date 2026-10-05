@@ -455,6 +455,32 @@ body.page-ink .footer a {
   .board-grid {
     grid-template-columns: 1fr;
   }
+  .board-visual:not(.board-visual--desk) {
+    height: auto;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 18px 16px 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .board-visual:not(.board-visual--desk)::-webkit-scrollbar {
+    display: none;
+  }
+  .board-visual:not(.board-visual--desk) img {
+    width: auto;
+    max-width: none;
+    height: min(52vh, 440px);
+    flex: 0 0 auto;
+    aspect-ratio: 900 / 1946;
+    object-fit: cover;
+    object-position: top center;
+    scroll-snap-align: start;
+    border-radius: 18px;
+  }
   .ink-glyph {
     font-size: 58vmin;
     top: auto;
