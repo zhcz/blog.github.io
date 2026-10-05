@@ -1,14 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600;900&display=swap");
 :root {
-  --main-color: #618786;
-  --bg-color: #f4f4f4;
-  --bg-content-color: #fff;
-  --bg-menu: #eceef2;
-  --bg-tag-color: #f4f4f4;
-  --bg-code: #eee;
-  --bg-codeblock: #f8f8f8;
-  --body-color: #4c4d4e;
-  --title-color: #50596c;
-  --border-color: rgba(0,0,0,0.1);
+  --color-mode: 'light';
+  --main-color: #8c6239;
+  --bg-color: #f3efe6;
+  --bg-content-color: #fffdf8;
+  --bg-menu: #e7e1d6;
+  --bg-tag-color: #efe8dc;
+  --bg-code: #efe8dc;
+  --bg-codeblock: #fffdf8;
+  --body-color: #3f3830;
+  --title-color: #1a1612;
+  --border-color: rgba(26, 22, 18, 0.12);
+  --mist: #6d645b;
+  --gold: #8c6239;
+  --stage: #e6dfd2;
+  --btn-bg: #1a1612;
+  --btn-fg: #f3efe6;
+  --ink: #1a1612;
+  --paper: #f3efe6;
+  --ink-soft: #fffdf8;
   --space: 3.5rem;
   --content-width: 776px;
 }
@@ -34,7 +44,7 @@ body {
   --base-font-size: 16px;
   font-size: var(--base-font-size);
   font-weight: 400;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   background-color: var(--bg-color);
   color: var(--body-color);
   -webkit-transition: color 0.6s, background-color 0.6s;
@@ -117,7 +127,7 @@ h5 {
   transition: color 0.6s;
   color: var(--title-color);
   margin: 2.75rem 0 1rem;
-  font-family: miriam libre, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, pingfang sc, source han sans sc, noto sans cjk sc, sarasa gothic sc, microsoft yahei, sans-serif, Apple Color Emoji, Segoe UI Emoji, Varela Round;
+  font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
   font-weight: 430;
   line-height: 1.5;
 }
@@ -1365,4 +1375,20 @@ overflows table td {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+}
+.header .logo__text,
+.header .navbar-menu,
+.header .dropdown-menu {
+  color: var(--mist);
+}
+.navbar-menu.is-current,
+.dropdown-menu.is-current {
+  font-weight: 700;
+  color: var(--title-color);
+  background-color: transparent;
+}
+.header #btn-search,
+.header #btn-toggle-dark,
+.header .dropdown-icon {
+  color: var(--title-color);
 }
